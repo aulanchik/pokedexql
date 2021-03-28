@@ -1,0 +1,111 @@
+.pokemon {
+    flex: 1 0 20%;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    overflow: hidden;
+}
+
+.pokemon p {
+    margin: 0;
+}
+
+.pokemon .pokemon__name {
+    background-color: #ecd018;
+    text-align: center;
+    padding: 10px;
+}
+
+.pokemon .pokemon__name p {
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: white;
+}
+
+.pokemon .pokemon__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    padding: 20px;
+}
+
+.pokemon .pokemon__img img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.pokemon .pokemon__attacks {
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    justify-content: space-between;
+}
+
+.pokemon .pokemon__attacks span {
+    width: 30%;
+    background-color: #f16820;
+    border-radius: 4px;
+    padding: 7px;
+    font-weight: 700;
+    color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    line-height: 15px;
+}
+
+.pokemon .pokemon__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding: 0 12px;
+}
+
+.pokemon .pokemon__meta span {
+    color: #ffffff;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+    background-color: #7bb7b7;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .pokemon {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .pokemon .pokemon__img img {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .pokemon .pokemon__attacks span {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 400px) {
+    .pokemon,
+    .pokemon .pokemon__meta span,
+    .pokemon .pokemon__attacks span {
+        width: 100%
+    }
+
+    .pokemon .pokemon__meta span + span {
+        margin-left: 10px;
+    }
+
+    .pokemon .pokemon__attacks span + span {
+        margin-left: 10px;
+    }
+
+}

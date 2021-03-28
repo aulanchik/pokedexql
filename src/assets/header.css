@@ -1,0 +1,15 @@
+.header {
+    padding: 20px;
+}
+
+.header .header__container {
+    text-align: center;
+}
+
+.header__container .header__title {
+    font-family: 'PokemonSolid';
+    -webkit-text-stroke: 3px#2a75bb;
+    color: #ffcb05;
+    font-size: 4rem;
+    letter-spacing: 1px;
+}

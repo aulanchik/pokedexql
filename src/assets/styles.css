@@ -1,6 +1,40 @@
+@import url('card.css');
+@import url('header.css');
+@import url('typo.css');
+
 body {
-    margin: 0;
-    padding: 0;
+    /* margin: 6px; */
+    line-height: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fbfbfb;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+@media (max-height: 400px) {
+    .container {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        display: inline-block;
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        display: inline-block;
+    }
 }

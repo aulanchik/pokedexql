@@ -4,10 +4,14 @@ import Pokemons from './Pokemons'
 
 const App = () => {
   return (
-    <div className="container">
-      <Header/>
-      <Pokemons/>
-    </div>
+    <React.Fragment>
+      <header>
+        <Header>PokeDex</Header>
+      </header>
+      <main>
+        <Pokemons/>
+      </main>
+    </React.Fragment>
   )
 }
 
