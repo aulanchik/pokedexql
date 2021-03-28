@@ -6,10 +6,8 @@ import App from './containers/App';
 import './assets/styles.css'
 
 ReactDOM.render(
-  <React.Fragment>
     <ApolloProvider client={Client}>
       <App />
-    </ApolloProvider>
-  </React.Fragment>,
+    </ApolloProvider>,
   document.getElementById('root')
 );
