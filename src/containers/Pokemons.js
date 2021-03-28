@@ -3,9 +3,9 @@ import { useQuery, gql } from '@apollo/client'
 import { Card } from '../components'
 
 const Pokemons = () => {
-    const {loading, data, error} = useQuery(GET_POKEMONS, {
+    const {loading, data : { pokemons = [] } = {}, error} = useQuery(GET_POKEMONS, {
         variables: {
-            first: 50
+            first: 151
         }
     });
     
@@ -13,14 +13,14 @@ const Pokemons = () => {
     if (error) return <div>Error: `${error.message}`</div>
 
     return (
-        <React.Fragment>
-            {data && data.pokemons.map(
+        <div className="container">
+            {pokemons && pokemons.map(
                 pokemon => (
-                    <Card key={pokemon.id} pokemon={pokemon}/>
+                    <Card key={pokemon.id} pokemon={pokemon} />
                 )
             )}
             {error && <span>Unable to get data</span>}
-        </React.Fragment>
+        </div>
     )
 }
 
