@@ -18,6 +18,11 @@ body {
     gap: 6px;
 }
 
+.container_text {
+    font-weight: 400;
+    text-align: center;
+}
+
 @media (max-height: 400px) {
     .container {
         display: inline-block;
