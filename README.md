@@ -2,7 +2,7 @@
 A Pokemon collection app built with ReactJS GraphQL CSS Grid and a few cups of coffee.
 
 ## Overview
-This project was created for the educational purposes while making a new research making data management using GraphQL with hooks like `useQuery()`.
+This project was created for the educational purposes while making a new research on data management using GraphQL with hooks like `useQuery()`.
 The final version of this project is mobile/desktop responsive and should fit mobile devices screens too (min. support IPhone SE models and newer)
 
 ## Tech stack
