@@ -1,13 +1,13 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
+import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 
-const endpointUrl = new HttpLink({
-    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
-    credentials: 'same-origin'
+const httpLink = createHttpLink({
+  uri: process.env.REACT_APP_GQL_ENDPOINT,
+  credentials: "same-origin",
 });
 
 const client = new ApolloClient({
-    link: endpointUrl,
-    cache: new InMemoryCache()
+  link: httpLink,
+  cache: new InMemoryCache(),
 });
 
 export default client;
