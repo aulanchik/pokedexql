@@ -1,50 +1,29 @@
-import React from 'react'
-import { useQuery, gql } from '@apollo/client'
-import { Card } from '../components'
+import React, { Suspense } from "react";
+import { getPokemons } from "../hooks";
+import { Card } from "../components";
 
 const Pokemons = () => {
+  const { error, pokemons } = getPokemons(125);
 
-    const { loading, error, data: { pokemons = [] } = {} } = useQuery(GET_POKEMONS, {
-        variables: {
-            first: 151
-        }
-    });
+  const renderPokemons = () => {
+    return pokemons?.map((pokemon) => (
+      <Card key={pokemon.id} pokemon={pokemon} />
+    ));
+  };
 
-    if (loading) return (<div className="container container_text"><p>Loading...</p></div>)
+  if (error) {
+    return (
+      <div className="container container_text">
+        <p>Error occurred. {error.message}</p>
+      </div>
+    );
+  }
 
-    if (pokemons && pokemons.length > 0) {
-        return (
-            <div className="container">
-                {pokemons.map(pokemon => <Card key={pokemon.id} pokemon={pokemon} />)}
-            </div>
-        )
-    }
-
-    if (error) {
-        return (
-            <div className="container container_text">
-                <p>Error ocurred.${error.message}</p>
-            </div>
-        )
-    }
-}
-
-const GET_POKEMONS = gql`
-    query pokemons($first: Int!) {
-        pokemons(first: $first) {
-            id
-            name
-            image
-            maxHP
-            maxCP
-            attacks {
-                special {
-                    name
-                    damage
-                }
-            }
-        }
-    }
-`;
+  return (
+    <div className="container">
+      <Suspense fallback={<div>Loading...</div>}>{renderPokemons()}</Suspense>
+    </div>
+  );
+};
 
 export default Pokemons;
